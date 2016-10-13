@@ -1,12 +1,13 @@
 //A programe to read input from a file and sort the numbers in it.
+//input file name is random_numbers.txt
 // Students:  U. Anil kumar & Y. Mallikarjuna Reddy
 
 import java.io.*;
 import java.util.*;
-class Sorting{
+class Sorting_From_File_Input{
       public static void main(String[] args)throws IOException
 	{
-	  FileInputStream fs=new FileInputStream("data.txt");
+	  FileInputStream fs=new FileInputStream("random_numbers.txt");
 	  Scanner s=new Scanner(fs);
 	  int size=fs.available();
 	  BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
