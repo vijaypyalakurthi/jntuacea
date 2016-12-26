@@ -1,0 +1,119 @@
+-------
+xampp
+-------
+
+sudo chmod +x xampp-linux-x64-7.0.8-0-installer.run
+
+sudo ./xampp-linux-x64-7.0.8-0-installer.run
+
+
+------
+java
+------
+tar -xvf jdk-7u79-linux-x64.tar.gz
+
+sudo mkdir -p /usr/lib/jvm
+
+sudo mv ./jdk1.7.0_79 /usr/lib/jvm/
+
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.7.0_79/bin/java" 1
+
+sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.7.0_79/bin/javac" 1
+
+sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/jvm/jdk1.7.0_79/bin/javaws" 1
+
+sudo chmod a+x /usr/bin/java
+
+sudo chmod a+x /usr/bin/javac
+
+sudo chmod a+x /usr/bin/javaws
+
+sudo chown -R root:root /usr/lib/jvm/jdk1.7.0_79
+
+sudo update-alternatives --config java
+
+sudo update-alternatives --config javac
+
+sudo update-alternatives --config javaws
+
+---------
+NETBEANS
+---------
+sudo chmod +x netbeans-8.1-linux.sh
+
+sudo ./netbeans-8.1-linux.sh
+
+
+-------
+WEKA
+-------
+
+cd weka-3-8-0
+
+java -jar weka.jar
+
+--------
+VIRTUALBOX
+---------
+
+sudo apt-get install dkms
+sudo apt-get install mysql-server 
+wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
+
+sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" >> /etc/apt/sources.list.d/virtualbox.list'
+
+sudo apt-get update
+
+sudo apt-get install virtualbox-4.3
+
+-------
+SELENIUM
+--------
+
+sudo chmod +x setup_selenium.sh
+
+sudo ./setup_selenium.sh
+
+--------
+My sql
+--------
+sudo apt-get update
+    
+sudo apt-get install mysql-server 
+
+   password: mysql
+
+wget http://dev.mysql.com/get/mysql-apt-config_0.6.0-1_all.deb
+
+sudo dpkg -i mysql-apt-config_0.6.0-1_all.deb
+
+sudo apt-get update
+
+sudo apt-get install mysql-server
+
+sudo mysql_secure_installation
+
+mysql --version
+
+---------
+tomcat
+---------
+tar xvzf apache-tomcat-8.5.4.tar.gz
+
+sudo mv apache-tomcat-8.5.4 /opt/tomcat
+
+vim ~/.bashrc
+
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+
+export CATALINA_HOME=/opt/tomcat
+
+$CATALINA_HOME/bin/startup.sh
+
+
+
+
+
+
+
+
